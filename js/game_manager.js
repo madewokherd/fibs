@@ -42,12 +42,14 @@ GameManager.prototype.setup = function () {
     this.score       = previousState.score;
     this.over        = previousState.over;
     this.won         = previousState.won;
+    this.next        = previousState.next;
     this.keepPlaying = previousState.keepPlaying;
   } else {
     this.grid        = new Grid(this.size);
     this.score       = 0;
     this.over        = false;
     this.won         = false;
+    this.next        = [];
     this.keepPlaying = false;
 
     // Add the initial tiles
@@ -68,8 +70,17 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.floor(Math.random() * 3 + 1);
-    var tile = new Tile(this.grid.randomAvailableCell(), value);
+    if (this.next.length === 0)
+    {
+      var temp = [1, 1, 2, 3];
+      while (temp.length !== 0)
+      {
+        var index = Math.floor(Math.random() * temp.length);
+        this.next.push(temp.splice(index, 1)[0]);
+      }
+    }
+
+    var tile = new Tile(this.grid.randomAvailableCell(), this.next.pop());
 
     this.grid.insertTile(tile);
   }
@@ -105,6 +116,7 @@ GameManager.prototype.serialize = function () {
     score:       this.score,
     over:        this.over,
     won:         this.won,
+    next:        this.next,
     keepPlaying: this.keepPlaying
   };
 };
