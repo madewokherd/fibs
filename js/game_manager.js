@@ -72,7 +72,7 @@ GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
     if (this.next.length === 0)
     {
-      var temp = [1, 1, 2, 3];
+      var temp = [1, 1, 1, 2, 3];
       while (temp.length !== 0)
       {
         var index = Math.floor(Math.random() * temp.length);
