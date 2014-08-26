@@ -51,18 +51,24 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   var wrapper   = document.createElement("div");
   var inner     = document.createElement("div");
+  var triangle  = document.createElement("div");
+  var triangle2 = document.createElement("div");
   var position  = tile.previousPosition || { x: tile.x, y: tile.y };
   var positionClass = this.positionClass(position);
 
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.value > 2048) classes.push("tile-super");
+  if (tile.value > 6765) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
   inner.textContent = tile.value;
+
+  triangle.classList.add("tile-tri");
+
+  triangle2.classList.add("tile-tri2");
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -82,6 +88,10 @@ HTMLActuator.prototype.addTile = function (tile) {
     classes.push("tile-new");
     this.applyClasses(wrapper, classes);
   }
+
+  wrapper.appendChild(triangle);
+
+  wrapper.appendChild(triangle2);
 
   // Add the inner part of the tile to the wrapper
   wrapper.appendChild(inner);

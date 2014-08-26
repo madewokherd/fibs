@@ -304,79 +304,256 @@ hr {
   transition: 100ms ease-in-out;
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
-  transition-property: transform; }
-  .tile .tile-inner {
-    border-radius: 3px;
-    background: #eee4da;
-    text-align: center;
-    font-weight: bold;
-    z-index: 10;
-    font-size: 55px; }
-  .tile.tile-1 .tile-inner {
-    background: #eee4da;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
-  .tile.tile-2 .tile-inner {
-    background: #ede0c8;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
-  .tile.tile-3 .tile-inner {
-    color: #f9f6f2;
-    background: #f2b179; }
-  .tile.tile-5 .tile-inner {
-    color: #f9f6f2;
-    background: #f59563; }
-  .tile.tile-8 .tile-inner {
-    color: #f9f6f2;
-    background: #f67c5f; }
-  .tile.tile-13 .tile-inner {
-    color: #f9f6f2;
-    background: #f65e3b; }
-  .tile.tile-21 .tile-inner {
-    color: #f9f6f2;
-    background: #edcf72;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
-    font-size: 45px; }
-    @media screen and (max-width: 520px) {
-      .tile.tile-128 .tile-inner {
-        font-size: 25px; } }
-  .tile.tile-34 .tile-inner {
-    color: #f9f6f2;
-    background: #edcc61;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
-    font-size: 45px; }
-    @media screen and (max-width: 520px) {
-      .tile.tile-256 .tile-inner {
-        font-size: 25px; } }
-  .tile.tile-55 .tile-inner {
-    color: #f9f6f2;
-    background: #edc850;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
-    font-size: 45px; }
-    @media screen and (max-width: 520px) {
-      .tile.tile-512 .tile-inner {
-        font-size: 25px; } }
-  .tile.tile-89 .tile-inner {
-    color: #f9f6f2;
-    background: #edc53f;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
-    font-size: 35px; }
-    @media screen and (max-width: 520px) {
-      .tile.tile-1024 .tile-inner {
-        font-size: 15px; } }
-  .tile.tile-144 .tile-inner {
-    color: #f9f6f2;
-    background: #edc22e;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
-    font-size: 35px; }
-    @media screen and (max-width: 520px) {
-      .tile.tile-2048 .tile-inner {
-        font-size: 15px; } }
-  .tile.tile-super .tile-inner {
-    color: #f9f6f2;
-    background: #3c3a32;
-    font-size: 30px; }
-    @media screen and (max-width: 520px) {
-      .tile.tile-super .tile-inner {
-        font-size: 10px; } }
+  transition-property: transform;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 55px;
+  overflow: hidden;
+}
+
+.tile .tile-inner {
+  color: #dddddd;
+}
+
+.tile-tri {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -57px;
+  top: 0px;
+  border-left: 53px solid transparent;
+  border-right: 53px solid transparent;
+  border-top: 53px solid transparent;
+  z-index: -1;
+}
+
+.tile-tri2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 57px;
+  top: 54px;
+  border-left: 53px solid transparent;
+  border-right: 53px solid transparent;
+  border-bottom: 53px solid transparent;
+  z-index: -1;
+}
+
+.tile.tile-1 .tile-tri {
+  border-top: 53px solid #3e5897;
+}
+.tile.tile-1 .tile-tri2 {
+  border-bottom: 53px solid #3e5897;
+}
+.tile.tile-1  {
+  background: #3e5897;
+  font-size: 45px;
+}
+
+.tile.tile-2 .tile-tri {
+  border-top: 53px solid #3e5897;
+}
+.tile.tile-2 .tile-tri2 {
+  border-bottom: 53px solid #3e5897;
+}
+.tile.tile-2  {
+  background: #739540;
+  font-size: 45px;
+}
+
+.tile.tile-3 .tile-tri {
+  border-top: 53px solid #739540;
+}
+.tile.tile-3 .tile-tri2 {
+  border-bottom: 53px solid #739540;
+}
+.tile.tile-3  {
+  background: #93428a;
+  font-size: 45px;
+}
+
+.tile.tile-5 .tile-tri {
+  border-top: 53px solid #93428a;
+}
+.tile.tile-5 .tile-tri2 {
+  border-bottom: 53px solid #93428a;
+}
+.tile.tile-5  {
+  background: #458f83;
+  font-size: 45px;
+}
+
+.tile.tile-8 .tile-tri {
+  border-top: 53px solid #458f83;
+}
+.tile.tile-8 .tile-tri2 {
+  border-bottom: 53px solid #458f83;
+}
+.tile.tile-8  {
+  background: #8d6c47;
+  font-size: 45px;
+}
+
+.tile.tile-13 .tile-tri {
+  border-top: 53px solid #8d6c47;
+}
+.tile.tile-13 .tile-tri2 {
+  border-bottom: 53px solid #8d6c47;
+}
+.tile.tile-13  {
+  background: #58498b;
+  font-size: 45px;
+}
+
+.tile.tile-21 .tile-tri {
+  border-top: 53px solid #58498b;
+}
+.tile.tile-21 .tile-tri2 {
+  border-bottom: 53px solid #58498b;
+}
+.tile.tile-21  {
+  background: #4f894b;
+  font-size: 45px;
+}
+
+.tile.tile-34 .tile-tri {
+  border-top: 53px solid #4f894b;
+}
+.tile.tile-34 .tile-tri2 {
+  border-bottom: 53px solid #4f894b;
+}
+.tile.tile-34  {
+  background: #874e62;
+  font-size: 45px;
+}
+
+.tile.tile-55 .tile-tri {
+  border-top: 53px solid #874e62;
+}
+.tile.tile-55 .tile-tri2 {
+  border-bottom: 53px solid #874e62;
+}
+.tile.tile-55  {
+  background: #507385;
+  font-size: 45px;
+}
+
+.tile.tile-89 .tile-tri {
+  border-top: 53px solid #507385;
+}
+.tile.tile-89 .tile-tri2 {
+  border-bottom: 53px solid #507385;
+}
+.tile.tile-89  {
+  background: #808352;
+  font-size: 45px;
+}
+
+.tile.tile-144 .tile-tri {
+  border-top: 53px solid #808352;
+}
+.tile.tile-144 .tile-tri2 {
+  border-bottom: 53px solid #808352;
+}
+.tile.tile-144  {
+  background: #775481;
+  font-size: 35px;
+}
+
+.tile.tile-233 .tile-tri {
+  border-top: 53px solid #775481;
+}
+.tile.tile-233 .tile-tri2 {
+  border-bottom: 53px solid #775481;
+}
+.tile.tile-233  {
+  background: #567e69;
+  font-size: 35px;
+}
+
+.tile.tile-377 .tile-tri {
+  border-top: 53px solid #567e69;
+}
+.tile.tile-377 .tile-tri2 {
+  border-bottom: 53px solid #567e69;
+}
+.tile.tile-377  {
+  background: #7c6058;
+  font-size: 35px;
+}
+
+.tile.tile-610 .tile-tri {
+  border-top: 53px solid #7c6058;
+}
+.tile.tile-610 .tile-tri2 {
+  border-bottom: 53px solid #7c6058;
+}
+.tile.tile-610  {
+  background: #5a5e7a;
+  font-size: 35px;
+}
+
+.tile.tile-987 .tile-tri {
+  border-top: 53px solid #5a5e7a;
+}
+.tile.tile-987 .tile-tri2 {
+  border-bottom: 53px solid #5a5e7a;
+}
+.tile.tile-987  {
+  background: #67785c;
+  font-size: 35px;
+}
+
+.tile.tile-1597 .tile-tri {
+  border-top: 53px solid #67785c;
+}
+.tile.tile-1597 .tile-tri2 {
+  border-bottom: 53px solid #67785c;
+}
+.tile.tile-1597  {
+  background: #75606f;
+  font-size: 25px;
+}
+
+.tile.tile-2584 .tile-tri {
+  border-top: 53px solid #75606f;
+}
+.tile.tile-2584 .tile-tri2 {
+  border-bottom: 53px solid #75606f;
+}
+.tile.tile-2584  {
+  background: #627373;
+  font-size: 25px;
+}
+
+.tile.tile-4181 .tile-tri {
+  border-top: 53px solid #627373;
+}
+.tile.tile-4181 .tile-tri2 {
+  border-bottom: 53px solid #627373;
+}
+.tile.tile-4181  {
+  background: #716d64;
+  font-size: 25px;
+}
+
+.tile.tile-6765 .tile-tri {
+  border-top: 53px solid #716d64;
+}
+.tile.tile-6765 .tile-tri2 {
+  border-bottom: 53px solid #716d64;
+}
+.tile.tile-6765  {
+  background: #6a666f;
+  font-size: 25px;
+}
+
+.tile.tile-super  {
+  background: #666666;
+  font-size: 15px;
+}
 
 @-webkit-keyframes appear {
   0% {
