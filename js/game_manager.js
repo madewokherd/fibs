@@ -213,7 +213,10 @@ GameManager.prototype.move = function (direction) {
   });
 
   if (moved) {
-    this.addRandomTile();
+    var num_spawns = Math.ceil(this.grid.availableCells().length / 4);
+    for (var i = 0; i < num_spawns; i++) {
+      this.addRandomTile();
+    }
 
     if (!this.movesAvailable()) {
       this.over = true; // Game over!
